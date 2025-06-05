@@ -8,14 +8,16 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description }) => (
   <motion.div
-    className="bg-white shadow-md rounded-lg p-4"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.22 }}
-    whileHover={{ scale: 1.05 }}
+    className="bg-white shadow-lg rounded-xl overflow-hidden border hover:shadow-2xl transition-shadow"
+    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    whileHover={{ scale: 1.03, rotate: 0.2 }}
+    transition={{ duration: 0.22, ease: "easeInOut" }}
   >
-    <h2 className="text-3xl font-bold mb-2">{title}</h2>
-    <p className="text-gray-700">{description}</p>
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-2 text-gray-800">{title}</h2>
+      <p className="text-gray-600">{description}</p>
+    </div>
   </motion.div>
 );
 

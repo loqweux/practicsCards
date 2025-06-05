@@ -9,7 +9,7 @@ export default function Header() {
     return "/info";
   };
   return (
-    <header className="flex items-center justify-around p-6 border-b-1">
+    <header className="flex items-center justify-around p-6 max-sm:p-3 border-b-1">
       <img src="./vite.svg" alt="logo" />
       <nav>
         {navs.map((nav) => (
@@ -18,7 +18,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-      <button>Leave</button>
+      <button className="cursor-pointer">Leave</button>
     </header>
   );
 }
